@@ -1,23 +1,19 @@
-import React from 'react'
-
-import { useForm } from 'react-hook-form';
+import React, { Suspense } from 'react';
+import { Route, Switch } from 'react-router';
 import './App.css';
+// import Home from './pages/Home';
 
+const Home = React.lazy(() => import('./pages/Home'));
+const Profile = React.lazy(() => import('./pages/Profile'));
 function App() {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-  }
   return (
     <div className="App">
-      <form
-      className="block" onSubmit={handleSubmit(onSubmit)}>
-        <label>Login</label>
-        <input type="text" {...register('login')}/>
-        <label>Password</label>
-        <input type="text" {...register('password')}/>
-        <button type="submit" className="">Войти</button>
-      </form>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route path="/profile" render={() => <Profile />} />
+          <Route path="/" render={() => <Home />} />
+        </Switch>
+      </Suspense>
     </div>
   );
 }
