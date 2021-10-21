@@ -1,0 +1,2 @@
+(this["webpackJsonpurban-test"]=this["webpackJsonpurban-test"]||[]).push([[4],{42:function(t,e,n){"use strict";n.r(e);n(0);var c=n(21),r=n(1),s=n(3);e.default=function(){var t=Object(c.c)((function(t){return t.userName}));return Object(s.jsx)("div",{children:t?Object(s.jsx)("h1",{children:t}):Object(s.jsx)(r.a,{to:"/"})})}}}]);
+//# sourceMappingURL=4.ff3cdafb.chunk.js.map
